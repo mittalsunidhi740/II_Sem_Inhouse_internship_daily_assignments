@@ -1,0 +1,144 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+    transition:0.4s;
+}
+
+/* Navbar */
+nav{
+    background:#0077cc;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    background:#0077cc;
+    color:white;
+    margin:10px;
+    font-size:16px;
+}
+
+button:hover{
+    background:#005fa3;
+}
+
+/* Counter */
+.counter{
+    text-align:center;
+    margin-top:40px;
+}
+
+#count{
+    font-size:40px;
+    margin:20px;
+    color:#0077cc;
+}
+
+/* Form */
+.form-section{
+    width:350px;
+    margin:40px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.form-section h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+#error{
+    color:red;
+    text-align:center;
+    margin-top:10px;
+}
+
+#greeting{
+    text-align:center;
+    color:green;
+    margin-top:15px;
+}
+
+/* Dark Mode */
+.dark{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark nav{
+    background:#111;
+}
+
+.dark .form-section{
+    background:#333;
+    color:white;
+}
+
+.dark input{
+    background:#555;
+    color:white;
+    border:1px solid #888;
+}
+
+.dark #count{
+    color:yellow;
+}
