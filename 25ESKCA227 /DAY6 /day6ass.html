@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users API</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            background:#f5f5f5;
+        }
+
+        .card{
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        img{
+            border:4px solid #0d6efd;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1 class="text-center fw-bold mt-4">PERSONAL DETAILS</h1>
+
+<h4 class="text-center text-primary mb-4" id="count"></h4>
+
+<div class="container">
+    <div class="row g-4" id="container">
+        <h3 class="text-center">Loading Users...</h3>
+    </div>
+</div>
+
+<script>
+
+function loadUsers(){
+
+    $("#container").html(`
+        <h3 class="text-center">Loading Users...</h3>
+    `);
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        let html = "";
+
+        for(let i=0;i<data.length;i++){
+
+            html += `
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow h-100">
+
+                    <div class="card-body text-center">
+
+                        <img src="https://i.pravatar.cc/150?img=${data[i].id}"
+                        class="rounded-circle mb-3"
+                        width="150"
+                        height="150">
+
+                        <h4>${data[i].name}</h4>
+
+                        <button class="btn btn-primary mt-2 show-btn">
+                            Show Details
+                        </button>
+
+                        <div class="details mt-3" style="display:none">
+
+                            <p><strong>ID:</strong> ${data[i].id}</p>
+
+                            <p><strong>Username:</strong> ${data[i].username}</p>
+
+                            <p><strong>Email:</strong> ${data[i].email}</p>
+
+                            <p><strong>Phone:</strong> ${data[i].phone}</p>
+
+                            <p><strong>Website:</strong> ${data[i].website}</p>
+
+                            <p><strong>Company:</strong> ${data[i].company.name}</p>
+
+                            <p><strong>City:</strong> ${data[i].address.city}</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            `;
+        }
+
+        $("#container").html(html);
+
+        $("#count").text("Showing " + data.length + " Users");
+
+        $(".show-btn").click(function(){
+
+            $(this).next(".details").slideToggle();
+
+            if($(this).text()=="Show Details"){
+                $(this).text("Hide Details");
+            }
+            else{
+                $(this).text("Show Details");
+            }
+
+        });
+
+    })
+
+    .catch(error => {
+
+        $("#container").html(`
+            <div class="text-center">
+                <h3 class="text-danger">
+                    Unable to load users.
+                </h3>
+
+                <button class="btn btn-primary mt-3" onclick="loadUsers()">
+                    Retry
+                </button>
+            </div>
+        `);
+
+    });
+
+}
+
+loadUsers();
+
+</script>
+
+</body>
+</html>
