@@ -1,0 +1,35 @@
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+}
+
+.hero{
+    background:linear-gradient(135deg,#007bff,#00c6ff);
+    color:white;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.card{
+    transition:0.3s;
+    margin-bottom:20px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+footer a{
+    margin:10px;
+}
+
+footer i:hover{
+    color:#0dcaf0;
+}
