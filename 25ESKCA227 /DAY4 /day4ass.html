@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Landing Page</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h2>My Landing Page</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 id="heading">Welcome to My Website</h1>
+        <p>Learn HTML, CSS & JavaScript</p>
+
+        <button id="darkBtn">🌙 Dark Mode</button>
+    </section>
+
+    <!-- Click Counter -->
+    <section class="counter">
+        <h2>Click Counter</h2>
+
+        <p id="count">0</p>
+
+        <button id="clickBtn">Click Me</button>
+        <button id="resetBtn">Reset</button>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="form-section">
+
+        <h2>Registration Form</h2>
+
+        <form id="myForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Your Name">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Your Email">
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+        <p id="error"></p>
+
+        <h3 id="greeting"></h3>
+
+    </section>
+
+    <script src="script4.js"></script>
+
+</body>
+</html>
